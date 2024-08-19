@@ -1,0 +1,141 @@
+<mvc:View 
+    controllerName="integration.controller.Main"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:filter="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc" >
+
+
+    <f:DynamicPage id="DynamicPage"
+                    showFooter="true">
+
+        <f:title>
+
+           <f:DynamicPageTitle id="DynamiCPageTitle">
+
+                <f:heading>
+                    <Title id="Title" text="Form"/>
+                </f:heading>
+
+                <f:navigationActions>
+                     <Button id="ButtonForm"
+                            type="Emphasized"
+                            text="Open Form"
+                            press="onDialog"
+                            width="8rem"/>
+                </f:navigationActions>
+
+           </f:DynamicPageTitle>
+        
+        </f:title>
+
+        <f:header>
+        
+            <f:DynamicPageHeader id="DynamicPageHeader">
+            
+                <f:content>
+
+                    <filter:FilterBar id="FilterBar">
+
+                        <filter:filterGroupItems>
+
+                             <filter:FilterGroupItem id="FilterGroupItemA" 
+                                                        groupName="Filters"
+                                                        label="Number Document"
+                                                        name="NumberDocument"
+                                                        visibleInFilterBar="true">
+
+                                    <filter:control>
+
+                                        <Input id="FilterNumberDocument"/>                                            
+
+                                    </filter:control>
+                             
+                             </filter:FilterGroupItem>
+
+                             <filter:FilterGroupItem id="FilterGroupItemB"
+                                                        groupName="filters"
+                                                        name="FullName"
+                                                        label="Full Name"
+                                                        visibleInFilterBar="true">
+
+                                <filter:control>
+
+                                        <Input id="FilterFullName"/>
+                                
+                                </filter:control>
+                             
+                             </filter:FilterGroupItem>
+                        
+                        </filter:filterGroupItems>
+                    
+                    </filter:FilterBar>
+                
+                </f:content>
+
+            </f:DynamicPageHeader>
+        
+        </f:header>
+
+
+        <f:content>
+
+            <Table id="Table"
+                    items="{view>/Employees}">
+
+                <columns>
+
+                    <Column id="ColumnNumberDocument">
+                        <header>
+                            <Text id="TextNumberDocument"
+                                    text="Number Document"/>
+                        </header>
+                    </Column>
+
+                    <Column id="ColumnFirstName">
+                        <Text id="TextFirstName"
+                                text="First Name"/>
+                    </Column>
+
+                    <Column id="ColumnLastName">
+                        <Text id="TextLastName"
+                                text="Last Name"/>
+                    </Column>
+
+                    <Column id="ColumnEmail">
+                        <Text id="TextEmail"
+                                text="Email"/>
+                    </Column>
+                
+                </columns>
+
+                <items>
+
+                    <ColumnListItem id="ColumnListItem">
+
+                        <cells>
+                        
+                            <Label id="LabelNumberDocument"
+                                    text="{view>NumberDocument}"/>
+                            <Label id="LabelFirstName"
+                                    text="{view>FirstName}"/>
+                            <Label id="LabelLastName"
+                                    text="{view>LastName}"/>
+                            <Label id="LabelEmail"
+                                    text="{view>Email}"/>
+                        
+                        </cells>
+                    
+                    </ColumnListItem>
+                
+                </items>
+            
+            </Table>        
+        
+        </f:content>
+
+    </f:DynamicPage>
+
+
+
+</mvc:View>

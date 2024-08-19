@@ -1,0 +1,22 @@
+{
+    "Employees":[
+        {
+            "NumberDocument":"12345678",
+            "FirstName":"Jorge",
+            "LastName":"Briceño",
+            "Email":"jbriceno@logaligroup.com"
+        },
+        {
+            "NumberDocument":"87456321",
+            "FirstName":"Jesús",
+            "LastName":"Montiel",
+            "Email":"jmontiel@logaligroup.com"
+        },
+        {
+            "NumberDocument":"12398745",
+            "FirstName":"Maria",
+            "LastName":"Gonzalez",
+            "Email":"mgonzalez@logaligroup.com"
+        }
+    ]
+}
