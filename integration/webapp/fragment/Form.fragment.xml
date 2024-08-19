@@ -14,16 +14,20 @@
                 <form:content>
 
                     <Label id="SLabelNumberDocument" text="Number Document"/>
-                    <Input id="SInputNumberDocument"/>
+                    <Input id="SInputNumberDocument"
+                            value="{form>/NumberDocument}"/>
 
                     <Label id="SLabelFirstName" text="First Name"/>
-                    <Input id="SInputFirstName"/>
+                    <Input id="SInputFirstName"
+                            value="{form>/FirstName}"/>
 
                     <Label id="SLabelLastName" text="Last Name"/>
-                    <Input id="SInputLasttName"/> 
+                    <Input id="SInputLasttName"
+                            value="{form>/LastName}"/> 
 
                     <Label id="SLabelEmail" text="Email"/>
-                    <Input id="Email"/> 
+                    <Input id="Email"
+                        value="{form>/Email}"/> 
 
                 </form:content>
 

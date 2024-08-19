@@ -47,7 +47,9 @@
 
                                     <filter:control>
 
-                                        <Input id="FilterNumberDocument"/>                                            
+                                        <Input id="FilterNumberDocument"
+                                                value="{filters>/NumberDocument}"
+                                                liveChange="onFilter"/>                                            
 
                                     </filter:control>
                              
@@ -61,7 +63,9 @@
 
                                 <filter:control>
 
-                                        <Input id="FilterFullName"/>
+                                        <Input id="FilterFullName"
+                                                value="{filters>/FullName}"
+                                                liveChange="onFilter"/>
                                 
                                 </filter:control>
                              
@@ -81,7 +85,7 @@
         <f:content>
 
             <Table id="Table"
-                    items="{view>/Employees}">
+                    items="{hana>/Employees}">
 
                 <columns>
 
@@ -106,23 +110,36 @@
                         <Text id="TextEmail"
                                 text="Email"/>
                     </Column>
+
+                    <Column id="ColumnDelete"
+                            width="5rem">
+                        <Text id="TextDelete"
+                                text="Delete"/>
+                    </Column>
                 
                 </columns>
 
                 <items>
 
-                    <ColumnListItem id="ColumnListItem">
+                    <ColumnListItem id="ColumnListItem"
+                                type="Active"
+                                press="onDetails">
 
                         <cells>
                         
                             <Label id="LabelNumberDocument"
-                                    text="{view>NumberDocument}"/>
+                                    text="{hana>DNI}"/>
                             <Label id="LabelFirstName"
-                                    text="{view>FirstName}"/>
+                                    text="{hana>FIRSTNAME}"/>
                             <Label id="LabelLastName"
-                                    text="{view>LastName}"/>
+                                    text="{hana>LASTNAME}"/>
                             <Label id="LabelEmail"
-                                    text="{view>Email}"/>
+                                    text="{hana>EMAIL}"/>
+
+                            <Button id="ButtonDelete"
+                                    icon="sap-icon://delete"
+                                    type="Reject"
+                                    press="onDelete"/>
                         
                         </cells>
                     

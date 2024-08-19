@@ -5,9 +5,10 @@
 sap.ui.define([
         "sap/ui/core/UIComponent",
         "sap/ui/Device",
-        "integration/model/models"
+        "integration/model/models",
+        "integration/utils/Utils"
     ],
-    function (UIComponent, Device, models) {
+    function (UIComponent, Device, models, Utils) {
         "use strict";
 
         return UIComponent.extend("integration.Component", {
@@ -20,7 +21,7 @@ sap.ui.define([
              * @public
              * @override
              */
-            init: function () {
+            init: async function () {
                 // call the base component's init function
                 UIComponent.prototype.init.apply(this, arguments);
 
@@ -29,6 +30,9 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+
+                //load - Employees
+                await Utils.execute('read', Utils.getData('read'), this);
             }
         });
     }
